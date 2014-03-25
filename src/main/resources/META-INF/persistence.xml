@@ -9,7 +9,6 @@
 		<description>Forge Persistence Unit</description>
 		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
 
-
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 
 		<properties>
