@@ -31,47 +31,27 @@
 	<form jsf:id="form">
 		<utils:barraSuperior />
 		<div class=".container">
-			<div class="input-group">
-				<input type="text" class="form-control" /> <span
-					class="input-group-btn">
-					<button class="btn btn-default" type="button">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</span>
-			</div>
-			<!-- /input-group -->
-			<br />
-			<div>
-				<div class="table-responsive">
-					<table class="table table-striped table-bordered">
-						<thead>
-							<tr>
-								<th>Evento</th>
-								<th>Participantes</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>tdc2013</td>
-								<td>5153 
-								<input
-									class="btn btn-default glyphicon glyphicon-chevron-right"
-									type="submit" value="Submit"
-									jsf:action="eventInfo?faces-redirect=true" />
-								</td>
-							</tr>
-							<tr>
-								<td>tdc2014</td>
-								<td>7542</td>
-							</tr>
-						</tbody>
-					</table>
+
+			<div class="panel panel-default">
+				<div class="panel-body">
+					Evento: tdc2014 <br /> Participantes: 3.212 <br /> Início:
+					21/02/2014 <br /> Término: 24/02/2014 <br />
 				</div>
-
-				<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="eventInfo?faces-redirect=true">Novo
-					evento</button>
-
 			</div>
+
+			<div class="btn-group btn-group-justified">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default">Left</button>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default">Middle</button>
+				</div>
+			</div>
+			<br/>
+			<button type="submit" class="btn btn-primary btn-lg btn-block"
+				jsf:action="part?faces-redirect=true">Pesquisar
+				participantes</button>
+
 
 		</div>
 	</form>
