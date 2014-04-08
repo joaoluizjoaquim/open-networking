@@ -1,51 +1,47 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
-	<ui:composition template="/WEB-INF/templates/base.xhtml">
-		<ui:define name="container">
-			<div class="input-group">
-				<input type="text" class="form-control" /> 
-				<span class="input-group-btn">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<ui:composition template="/WEB-INF/templates/base.xhtml">
+	<ui:define name="container">
+		<span>Qual evento você procura?</span>
+		<div class="input-group">
+			<input type="text" class="form-control" /> <span class="input-group-btn">
 				<button class="btn btn-default" type="submit" jsf:action="#{eventMB.searchEvent()}">
 					<span class="glyphicon glyphicon-search"></span>
 				</button>
-				</span>
-			</div>
-			<br />
-			<div id="eventsList" jsf:id="eventsList" jsf:rendered="#{eventMB.foundSomeEvent()}">
-				<div class="table-responsive">
-					<table class="table table-striped table-bordered">
-						<thead>
+			</span>
+		</div>
+		<br />
+		<div id="eventsList" jsf:id="eventsList" jsf:rendered="#{eventMB.foundSomeEvent()}">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Evento</th>
+							<th>Participantes</th>
+						</tr>
+					</thead>
+					<tbody>
+						<ui:repeat var="event" value="#{eventMB.eventsFound}">
 							<tr>
-								<th>Evento</th>
-								<th>Participantes</th>
+								<td>#{event.name}</td>
+								<td>
+									<h:outputText value="#{event.totalParticipants}">
+										<f:convertNumber />
+									</h:outputText>
+								</td>
 							</tr>
-						</thead>
-						<tbody>
-							<ui:repeat var="event" value="#{eventMB.eventsFound}">
-								<tr>
-									
-									<td>#{event.name}</td>
-									<td>
-										<h:outputText value="#{event.totalParticipants}">
-											<f:convertNumber />
-										</h:outputText>
-									</td>
-								</tr>
-							</ui:repeat>
-						</tbody>
-					</table>
-				</div>
-
-				<button type="submit" class="btn btn-primary btn-lg btn-block"
-					jsf:action="eventInfo?faces-redirect=true">Novo evento</button>
-
+						</ui:repeat>
+					</tbody>
+				</table>
 			</div>
-		</ui:define>
-	</ui:composition>
+
+			<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="eventInfo?faces-redirect=true">
+				<span class="glyphicon glyphicon-plus"></span> Novo evento
+			</button>
+
+		</div>
+	</ui:define>
+</ui:composition>
 </html>

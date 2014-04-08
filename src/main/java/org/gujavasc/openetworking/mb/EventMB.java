@@ -22,7 +22,7 @@ public class EventMB implements Serializable{
 	private List<Event> eventsFound;
 	
 	public void searchEvent(){
-		eventsFound = Arrays.asList(new Event("TDC 2014", 5753), new Event("JavaOne",8492));
+		eventsFound = Arrays.asList(new Event("TDC 2014", 5753), new Event("JavaOne 2014",8492));
 		search = true;
 	}
 	
