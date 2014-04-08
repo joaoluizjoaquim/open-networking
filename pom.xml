@@ -10,48 +10,20 @@
 	<packaging>war</packaging>
 	<name>Open Networking :: WAR</name>
 
-	<developers>
-		<developer>
-			<id>ricardo</id>
-			<name>Ricardo Longa</name>
-		</developer>
-		<developer>
-			<id>george</id>
-			<name>George Gastaldi</name>
-		</developer>
-		<developer>
-			<id>rodolfo</id>
-			<name>Rodolfo Faquin Della Justina</name>
-		</developer>
-		<developer>
-			<id>ivanjunckes</id>
-			<name>Ivan Junckes Filho</name>
-		</developer>
-	</developers>
-
 	<scm>
 		<connection>scm:git:git://github.com/gujavasc/open-networking.git</connection>
 		<developerConnection>scm:git:git@github.com:gujavasc/open-networking.git</developerConnection>
 		<url>http://github.com/gujavasc/open-networking</url>
 	</scm>
 
-	<properties>
-		<version.junit>4.11</version.junit>
-		<version.arquillian_core>1.1.0.Final</version.arquillian_core>
-		<version.agorava.core>0.6.0</version.agorava.core>
-		<version.agorava.modules>0.6.0</version.agorava.modules>
-		<version.picketlink>2.5.0.Beta5</version.picketlink>
-	</properties>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>javax</groupId>
-				<artifactId>javaee-api</artifactId>
-				<version>7.0</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>

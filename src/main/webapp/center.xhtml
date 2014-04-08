@@ -6,42 +6,18 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
-<head jsf:id="head">
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bootstrap 101 Template</title>
-
-<!-- Bootstrap -->
-<link href="resources/css/bootstrap.min.css" rel="stylesheet" />
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="resources/js/bootstrap.min.js"></script>
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-	<form jsf:id="form">
-		<utils:barraSuperior />
-		<div class="container">
+	<ui:composition template="/WEB-INF/templates/base.xhtml">
+		<ui:define name="container">
 			<div class="input-group">
-				<input type="text" class="form-control" /> <span
-					class="input-group-btn">
-					<button class="btn btn-default" type="button">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
+				<input type="text" class="form-control" /> 
+				<span class="input-group-btn">
+				<button class="btn btn-default" type="submit" jsf:action="#{eventMB.searchEvent()}">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
 				</span>
 			</div>
-			<!-- /input-group -->
 			<br />
-			<div>
+			<div id="eventsList" jsf:id="eventsList" jsf:rendered="#{eventMB.foundSomeEvent()}">
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered">
 						<thead>
@@ -51,18 +27,12 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>tdc2013</td>
-								<td>5153 <input
-									class="btn btn-default glyphicon glyphicon-chevron-right"
-									type="submit" value="Submit"
-									jsf:action="eventInfo?faces-redirect=true" />
-								</td>
-							</tr>
-							<tr>
-								<td>tdc2014</td>
-								<td>7542</td>
-							</tr>
+							<ui:repeat var="event" value="#{eventMB.eventsFound}">
+								<tr>
+									<td>#{event.name}</td>
+									<td>#{event.totalParticipants}</td>
+								</tr>
+							</ui:repeat>
 						</tbody>
 					</table>
 				</div>
@@ -71,8 +41,6 @@
 					jsf:action="eventInfo?faces-redirect=true">Novo evento</button>
 
 			</div>
-
-		</div>
-	</form>
-</body>
+		</ui:define>
+	</ui:composition>
 </html>
