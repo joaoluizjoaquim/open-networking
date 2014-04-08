@@ -29,8 +29,13 @@
 						<tbody>
 							<ui:repeat var="event" value="#{eventMB.eventsFound}">
 								<tr>
+									
 									<td>#{event.name}</td>
-									<td>#{event.totalParticipants}</td>
+									<td>
+										<h:outputText value="#{event.totalParticipants}">
+											<f:convertNumber />
+										</h:outputText>
+									</td>
 								</tr>
 							</ui:repeat>
 						</tbody>
