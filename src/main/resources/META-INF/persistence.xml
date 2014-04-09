@@ -6,7 +6,7 @@
 
 	<persistence-unit name="forge-default"
 		transaction-type="JTA">
-		<description>Forge Persistence Unit</description>
+		<description>Open Networking Persistence Unit</description>
 		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
 
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
