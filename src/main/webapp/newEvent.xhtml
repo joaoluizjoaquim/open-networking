@@ -5,11 +5,41 @@
 <ui:composition template="/WEB-INF/templates/base.xhtml">
 	<ui:define name="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-12">
 				Nome do evento
-				<div class="input-group">
-					<input type="text" class="form-control"/>
+				<div class="input">
+					<input type="text" class="form-control" />
 				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				Início
+				<div class="input">
+					<input type="date" class="form-control" />
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				Fim
+				<div class="input">
+					<input type="date" class="form-control" />
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-md-12">
+				<button type="submit" class="btn btn-default btn-lg btn-block">
+					<span class="glyphicon glyphicon-ok"></span> Salvar
+				</button>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-md-12">
+				<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="part?faces-redirect=true">
+					<span class="glyphicon glyphicon-filter"></span> Pesquisar participantes
+				</button>
 			</div>
 		</div>
 	</ui:define>
