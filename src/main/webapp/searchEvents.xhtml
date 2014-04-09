@@ -4,13 +4,17 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <ui:composition template="/WEB-INF/templates/base.xhtml">
 	<ui:define name="container">
-		<span>Qual evento você procura?</span>
-		<div class="input-group">
-			<input type="text" class="form-control" /> <span class="input-group-btn">
-				<button class="btn btn-default" type="submit" jsf:action="#{eventMB.searchEvent()}">
-					<span class="glyphicon glyphicon-search"></span>
-				</button>
-			</span>
+		
+		<div class="form-group">
+			<label>Qual evento você procura?</label>
+			<div class="input-group">
+				<input type="text" class="form-control" /> 
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="submit" jsf:action="#{eventMB.searchEvent()}">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</span>
+			</div>			
 		</div>
 		<br />
 		<div id="eventsList" jsf:id="eventsList" jsf:rendered="#{eventMB.foundSomeEvent()}">

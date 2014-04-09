@@ -4,22 +4,54 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
 <ui:composition template="/WEB-INF/templates/base.xhtml">
 	<ui:define name="container">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				Evento: tdc2014 <br /> Participantes: 3.212 <br /> Início: 21/02/2014 <br /> Término: 24/02/2014 <br />
+		<div class="row">
+			<div class="col-xs-6 col-sm-2 col-md-2 text-right">
+				<label>Evento:</label>
+			</div>
+			<div class="col-xs-6 col-sm-10 col-md-10">
+				<p>tdc2014</p>
 			</div>
 		</div>
-
-		<div class="btn-group btn-group-justified">
-			<div class="btn-group">
-				<button type="button" class="btn btn-default">Checkout</button>
+		<div class="row">
+			<div class="col-xs-6 col-sm-2 col-md-2 text-right">
+				<label>Participantes:</label>
 			</div>
-			<div class="btn-group">
-				<button type="button" class="btn btn-default">Checkin</button>
+			<div class="col-xs-6 col-sm-10 col-md-10">
+				<p>8.625</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-2 col-md-2 text-right">
+				<label>Início:</label>
+			</div>
+			<div class="col-xs-6 col-sm-10 col-md-10">
+				<p>01/01/2013</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-2 col-md-2 text-right">
+				<label>Fim:</label>
+			</div>
+			<div class="col-xs-6 col-sm-10 col-md-10">
+				<p>05/01/2013</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<button type="button" class="btn btn-danger btn-lg btn-block">
+					<span class="glyphicon glyphicon-remove-sign" /> Checkout
+				</button>
+			</div>
+			<div class="col-xs-6">
+				<button type="button" class="btn btn-success btn-lg btn-block">
+					<span class="glyphicon glyphicon-ok-sign" /> Checkin
+				</button>
 			</div>
 		</div>
 		<br />
-		<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="part?faces-redirect=true">Pesquisar participantes</button>
+		<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="part?faces-redirect=true">
+			<span class="glyphicon glyphicon-filter" /> Pesquisar participantes
+		</button>
 	</ui:define>
 </ui:composition>
 </html>
