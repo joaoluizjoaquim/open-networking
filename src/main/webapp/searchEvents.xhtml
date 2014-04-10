@@ -12,7 +12,8 @@
 					jsf:id="filterEventName" 
 					jsf:value="#{eventMB.filterEventName}"/> 
 				<span class="input-group-btn">
-					<button class="btn btn-default" type="button">
+					<button class="btn btn-default" type="button"
+						jsf:id="btSearchEvents">
 						<f:ajax event="click" execute="filterEventName" render="container" listener="#{eventMB.searchEvent()}"/>
 						<span class="glyphicon glyphicon-search"></span>
 					</button>
