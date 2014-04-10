@@ -1,9 +1,6 @@
 package org.gujavasc.openetworking.mb;
 
 import java.io.Serializable;
-
-
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,6 +16,7 @@ public class EventMB implements Serializable{
 	private static final long serialVersionUID = -6601391210412051501L;
 	
 	private boolean search;
+	private String filterEventName;
 	private List<Event> eventsFound;
 	
 	public void searchEvent(){
@@ -32,6 +30,14 @@ public class EventMB implements Serializable{
 
 	public List<Event> getEventsFound() {
 		return eventsFound;
+	}
+
+	public String getFilterEventName() {
+		return filterEventName;
+	}
+
+	public void setFilterEventName(String filterEventName) {
+		this.filterEventName = filterEventName;
 	}
 	
 }
