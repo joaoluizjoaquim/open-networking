@@ -8,14 +8,18 @@ import javax.servlet.http.Part;
 @ViewScoped
 public class FileUploadMB {
 
-	private Part arquivo;
-
-	public Part getArquivo() {
-		return arquivo;
+	private Part file;
+	
+	public void saveFile(){
+		System.out.println(file.getSubmittedFileName());
 	}
 
-	public void setArquivo(Part arquivo) {
-		this.arquivo = arquivo;
+	public Part getFile() {
+		return file;
+	}
+
+	public void setFile(Part file) {
+		this.file = file;
 	}
 	
 }
