@@ -1,16 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<ui:composition template="/WEB-INF/templates/base.xhtml">
-	<ui:define name="body">
-		<form jsf:id="form">
-			<div class="container text-center">
-				<h3>Open Networking</h3>
-				<br />
-				<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="searchEvents?faces-redirect=true">Entrar utilizando o
-					Linkedin</button>
-			</div>
-		</form>
-	</ui:define>
-</ui:composition>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:jsf="http://xmlns.jcp.org/jsf" 
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<f:view contracts="#{sessionScope.theme}">
+	<ui:composition template="/template.xhtml">
+		<ui:define name="body">
+			<form jsf:id="form">
+				<div class="container text-center">
+					<h3>Open Networking</h3>
+					<br />
+					<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="searchEvents?faces-redirect=true">Entrar utilizando o
+						Linkedin</button>
+				</div>
+			</form>
+		</ui:define>
+	</ui:composition>
+</f:view>
 </html>

@@ -2,58 +2,52 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
-<ui:composition template="/WEB-INF/templates/base.xhtml">
-	<ui:define name="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="form-group">
-					<label for="eventCity">Endereço</label>
-					<input id="eventAddress" type="text" class="form-control"
-						jsf:value="#{newEventMB.eventAddress}" />
+<f:view contracts="default">
+	<ui:composition template="/template.xhtml">
+		<ui:define name="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="eventCity">Endereço</label> <input id="eventAddress" type="text" class="form-control" jsf:value="#{newEventMB.eventAddress}" />
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="form-group">
-					<label for="eventCity">Cidade</label>
-					<input id="eventCity" type="text" class="form-control"
-						jsf:value="#{newEventMB.eventCity}" />
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="eventCity">Cidade</label> <input id="eventCity" type="text" class="form-control" jsf:value="#{newEventMB.eventCity}" />
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="form-group">
-					<label for="eventCity">País</label>
-					<input id="eventCity" type="text" class="form-control"
-						jsf:value="#{newEventMB.eventCountry}" />
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="eventCity">País</label> <input id="eventCity" type="text" class="form-control" jsf:value="#{newEventMB.eventCountry}" />
+					</div>
 				</div>
 			</div>
-		</div>
-		<br/>
-		<div class="row">
-			<div class="col-xs-6">
-				<button type="submit" class="btn btn-default btn-lg btn-block"
-					jsf:action="newEventFlow">
-					<span class="glyphicon glyphicon-chevron-left"></span> Voltar
-				</button>
+			<br />
+			<div class="row">
+				<div class="col-xs-6">
+					<button type="submit" class="btn btn-default btn-lg btn-block" jsf:action="newEventFlow">
+						<span class="glyphicon glyphicon-chevron-left"></span> Voltar
+					</button>
+				</div>
+				<div class="col-xs-6">
+					<button type="submit" class="btn btn-success btn-lg btn-block" jsf:action="#{newEventMB.save()}">
+						<span class="glyphicon glyphicon-ok"></span> Salvar
+					</button>
+				</div>
 			</div>
-			<div class="col-xs-6">
-				<button type="submit" class="btn btn-success btn-lg btn-block"
-					jsf:action="#{newEventMB.save()}">
-					<span class="glyphicon glyphicon-ok"></span> Salvar
-				</button>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="part?faces-redirect=true">
+						<span class="glyphicon glyphicon-filter"></span> Pesquisar participantes
+					</button>
+				</div>
 			</div>
-		</div>
-		<br/>
-		<div class="row">
-			<div class="col-md-12">
-				<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="part?faces-redirect=true">
-					<span class="glyphicon glyphicon-filter"></span> Pesquisar participantes
-				</button>
-			</div>
-		</div>
-	</ui:define>
-</ui:composition>
+		</ui:define>
+	</ui:composition>
+</f:view>
 </html>
