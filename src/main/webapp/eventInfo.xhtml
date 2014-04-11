@@ -49,9 +49,20 @@
 			</div>
 		</div>
 		<br />
-		<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="searchParticipants?faces-redirect=true">
-			<span class="glyphicon glyphicon-filter" /> Pesquisar participantes
-		</button>
+		<div class="row">
+			<div class="col-xs-12">
+				<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="searchParticipants?faces-redirect=true">
+					<span class="glyphicon glyphicon-filter" /> Pesquisar participantes
+				</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:outcome="fileUpload">
+					<span class="glyphicon glyphicon-filter" /> Upload Arquivo do evento
+				</button>
+			</div>
+		</div>
 	</ui:define>
 </ui:composition>
 </html>
