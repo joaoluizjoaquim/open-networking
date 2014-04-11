@@ -9,16 +9,18 @@
 			<h:messages showSummary="true" />
 			<div jsf:id="container" class="container">
 				<div class="form-group">
-					<label jsf:for="exampleInputFile">File input</label> <input type="file" jsf:id="exampleInputFile" jsf:value="#{fileUploadMB.file}" />
-					<p class="help-block">Example block-level help text here.</p>
+					<label jsf:for="exampleInputFile">Arquivo</label> 
+					<input type="file" jsf:id="exampleInputFile" jsf:value="#{fileUploadMB.file}"
+						accept="image/*"/>
+					<p class="help-block">Somente arquivo de imagem.</p>
 				</div>
 				<br />
 				<div class="row">
 					<div class="col-xs-12">
 						<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="#{fileUploadMB.saveFile()}">
-							<span class="glyphicon glyphicon-filter" /> Pesquisar participantes
+							<span class="glyphicon glyphicon-cloud-upload" /> Upload arquivo
 						</button>
-					</div>
+					</div> 
 				</div>
 			</div>
 		</form>
