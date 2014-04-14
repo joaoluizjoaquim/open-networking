@@ -13,8 +13,7 @@
 					jsf:id="filterEventName" 
 					jsf:value="#{eventMB.filterEventName}"/> 
 				<span class="input-group-btn">
-					<button class="btn btn-default" type="button"
-						jsf:id="btSearchEvents">
+					<button class="btn btn-default" type="button" jsf:id="btSearchEvents">
 						<f:ajax event="click" execute="filterEventName" render="container" listener="#{eventMB.searchEvent()}"/>
 						<span class="glyphicon glyphicon-search"></span>
 					</button>
@@ -49,7 +48,7 @@
 						</ui:repeat>
 					</tbody>
 				</table>
-			</div>
+			</div> 
 
 			<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="newEventFlow">
 				<span class="glyphicon glyphicon-plus"></span> #{msg['new.event']}
