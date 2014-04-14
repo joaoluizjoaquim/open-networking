@@ -6,13 +6,13 @@
 	<ui:composition template="/template.xhtml">
 		<ui:define name="container">
 			<div class="form-group">
-				<label>Meus eventos</label>
+				<label>#{msg['my.events']}</label>
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered">
 						<thead>
 							<tr>
-								<th>Evento</th>
-								<th>Participantes</th>
+								<th>#{msg.event}</th>
+								<th>#{msg.participants}</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -31,7 +31,7 @@
 				</div>
 
 				<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="eventInfo?faces-redirect=true">
-					<span class="glyphicon glyphicon-plus"></span> Novo evento
+					<span class="glyphicon glyphicon-plus"></span> #{msg['new.event']}
 				</button>
 
 			</div>

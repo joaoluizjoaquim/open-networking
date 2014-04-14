@@ -7,7 +7,7 @@
 		<ui:define name="container">
 			<div class="row">
 				<div class="col-xs-6 col-sm-2 col-md-2 text-right">
-					<label>Evento:</label>
+					<label>#{msg.event}:</label>
 				</div>
 				<div class="col-xs-6 col-sm-10 col-md-10">
 					<p>tdc2014</p>
@@ -15,7 +15,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-6 col-sm-2 col-md-2 text-right">
-					<label>Participantes:</label>
+					<label>#{msg.participants}:</label>
 				</div>
 				<div class="col-xs-6 col-sm-10 col-md-10">
 					<p>8.625</p>
@@ -23,7 +23,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-6 col-sm-2 col-md-2 text-right">
-					<label>Início:</label>
+					<label>#{msg['start.event.date']}:</label>
 				</div>
 				<div class="col-xs-6 col-sm-10 col-md-10">
 					<p>01/01/2013</p>
@@ -31,7 +31,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-6 col-sm-2 col-md-2 text-right">
-					<label>Fim:</label>
+					<label>#{msg['finish.event.date']}:</label>
 				</div>
 				<div class="col-xs-6 col-sm-10 col-md-10">
 					<p>05/01/2013</p>
@@ -53,7 +53,7 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="searchParticipants?faces-redirect=true">
-						<span class="glyphicon glyphicon-filter" /> Pesquisar participantes
+						<span class="glyphicon glyphicon-filter" /> #{msg['search.participants']}
 					</button>
 				</div>
 			</div>
