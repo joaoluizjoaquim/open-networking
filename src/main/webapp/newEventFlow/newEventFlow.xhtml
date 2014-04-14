@@ -15,15 +15,17 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<label>#{msg['start.event.date']}</label> <input type="date" class="form-control" jsf:value="#{newEventMB.eventInitialDate}">
-						<f:convertDateTime pattern="yyyy-MM-dd" />
+						<label>#{msg['start.event.date']}</label> 
+						<input jsf:id="startEventDate" type="date" class="form-control" jsf:value="#{newEventMB.eventInitialDate}">
+							<f:convertDateTime />
 						</input>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<label>#{msg['finish.event.date']}</label> <input type="date" class="form-control" jsf:value="#{newEventMB.eventFinalDate}">
-						<f:convertDateTime pattern="yyyy-MM-dd" />
+						<label>#{msg['finish.event.date']}</label> 
+						<input jsf:id="finishEventDate" type="date" class="form-control" jsf:value="#{newEventMB.eventFinalDate}">
+							<f:convertDateTime />
 						</input>
 					</div>
 				</div>
