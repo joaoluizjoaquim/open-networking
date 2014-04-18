@@ -13,6 +13,11 @@
 		<param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
 		<param-value>/WEB-INF/resources</param-value>
 	</context-param>
+	
+	<context-param>
+		<param-name>org.gujavasc.opennetworking.STATELESS_MODE</param-name>
+		<param-value>true</param-value>
+	</context-param>
 
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>

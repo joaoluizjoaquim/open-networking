@@ -4,7 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core" 
 	xmlns:jsf="http://xmlns.jcp.org/jsf" 
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<f:view contracts="#{sessionScope.theme}">
+<f:view contracts="#{sessionScope.theme}" transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
 	<ui:composition template="/template.xhtml">
 		<ui:define name="body">
 			<form jsf:id="form">
