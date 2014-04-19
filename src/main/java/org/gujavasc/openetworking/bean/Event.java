@@ -6,6 +6,9 @@ public class Event {
 	
 	private Integer totalParticipants;
 	
+	public Event() {
+	}
+	
 	public Event(String name, Integer totalParticipants) {
 		this.name = name;
 		this.totalParticipants = totalParticipants;

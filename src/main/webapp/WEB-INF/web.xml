@@ -13,11 +13,17 @@
 		<param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
 		<param-value>/WEB-INF/resources</param-value>
 	</context-param>
+
+	<context-param>
+		<param-name>javax.faces.CLIENT_WINDOW_MODE</param-name>
+		<param-value>url</param-value>
+	</context-param>
 	
 	<context-param>
 		<param-name>org.gujavasc.opennetworking.STATELESS_MODE</param-name>
-		<param-value>true</param-value>
+		<param-value>false</param-value>
 	</context-param>
+
 
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
@@ -39,21 +45,21 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<!-- Web utilities -->
-	
+
 	<filter>
 		<filter-name>responseCacheFilter</filter-name>
 		<filter-class>com.googlecode.webutilities.filters.ResponseCacheFilter</filter-class>
 	</filter>
-	
+
 	<filter-mapping>
 		<filter-name>responseCacheFilter</filter-name>
 		<url-pattern>*.css</url-pattern>
 		<url-pattern>*.js</url-pattern>
 	</filter-mapping>
-	
+
 	<servlet>
 		<servlet-name>jscssMergeServlet</servlet-name>
 		<servlet-class>com.googlecode.webutilities.servlets.JSCSSMergeServlet</servlet-class>
@@ -62,13 +68,13 @@
 			<param-value>private</param-value>
 		</init-param>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>jscssMergeServlet</servlet-name>
 		<url-pattern>*.css</url-pattern>
 		<url-pattern>*.js</url-pattern>
 	</servlet-mapping>
-	
+
 	<filter>
 		<filter-name>compressionFilter</filter-name>
 		<filter-class>com.googlecode.webutilities.filters.CompressionFilter</filter-class>
@@ -77,12 +83,12 @@
 			<param-value>1024</param-value>
 		</init-param>
 	</filter>
-	
+
 	<filter-mapping>
 		<filter-name>compressionFilter</filter-name>
 		<url-pattern>*</url-pattern>
 	</filter-mapping>
-	
+
 	<filter>
 		<filter-name>yuiMinFilter</filter-name>
 		<filter-class>com.googlecode.webutilities.filters.YUIMinFilter</filter-class>
@@ -92,10 +98,10 @@
 		</init-param>
 	</filter>
 
-	<filter-mapping>
-		<filter-name>yuiMinFilter</filter-name>
-		<url-pattern>*.css</url-pattern>
-		<url-pattern>*.js</url-pattern>
-	</filter-mapping>
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>yuiMinFilter</filter-name> -->
+<!-- 		<url-pattern>*.css</url-pattern> -->
+<!-- 		<url-pattern>*.js</url-pattern> -->
+<!-- 	</filter-mapping> -->
 
 </web-app>
