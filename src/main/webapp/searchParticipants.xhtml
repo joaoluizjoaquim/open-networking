@@ -1,14 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:utils="http://xmlns.jcp.org/jsf/composite/">
-<f:view contracts="#{sessionScope.theme}" transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:utils="http://xmlns.jcp.org/jsf/composite/">
+<f:view contracts="#{sessionScope.theme}"
+	transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
 	<ui:composition template="/template.xhtml">
 		<ui:define name="container">
 			<div class="form-group">
 				<label>#{msg['label.question.knowledge.participant']}</label>
 				<div class="input-group">
-					<input type="text" class="form-control" /> <span class="input-group-btn">
+					<input type="text" class="form-control" /> <span
+						class="input-group-btn">
 						<button class="btn btn-default" type="button">
 							<span class="glyphicon glyphicon-search" />
 						</button>
@@ -26,9 +32,12 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>Pedro de Alcântara Francisco António João Carlos Xavier de Paula Miguel Rafael Joaquim José Gonzaga Pascoal Cipriano Serafim de Bragança e Bourbon</td>
+							<td>Pedro de Alcântara Francisco António João Carlos Xavier
+								de Paula Miguel Rafael Joaquim José Gonzaga Pascoal Cipriano
+								Serafim de Bragança e Bourbon</td>
 							<td style="width: 10px;">
-								<button type="submit" class="btn btn-default btn-xs" jsf:action="myProfile?faces-redirect=true">
+								<button type="submit" class="btn btn-default btn-xs"
+									jsf:action="myProfile?faces-redirect=true">
 									<span class="glyphicon glyphicon-chevron-right" />
 								</button>
 							</td>

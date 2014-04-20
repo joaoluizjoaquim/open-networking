@@ -1,6 +1,5 @@
 package org.gujavasc.openetworking.mb;
 
-import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -12,11 +11,10 @@ public class EventInfoMB {
 
 	private Event selectedEvent;
 	
-	@PostConstruct
-	public void postConstruct(){
-		selectedEvent = new Event();
+	public void searchSelectedEvent(String selectedEventName){
+		selectedEvent = new Event(selectedEventName, 7543);
 	}
-
+	
 	public Event getSelectedEvent() {
 		return selectedEvent;
 	}
@@ -24,5 +22,4 @@ public class EventInfoMB {
 	public void setSelectedEvent(Event selectedEvent) {
 		this.selectedEvent = selectedEvent;
 	}
-	
 }

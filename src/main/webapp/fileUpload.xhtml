@@ -1,8 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
-<f:view contracts="#{sessionScope.theme}" transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
+<f:view contracts="#{sessionScope.theme}"
+	transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
 	<ui:composition template="/template.xhtml">
 		<ui:define name="body">
 			<form jsf:id="form" role="form" enctype="multipart/form-data">
@@ -10,15 +15,18 @@
 				<h:messages showSummary="true" />
 				<div jsf:id="container" class="container">
 					<div class="form-group">
-						<label jsf:for="exampleInputFile">#{msg.file}</label> <input type="file" jsf:id="exampleInputFile" jsf:value="#{fileUploadMB.file}"
-							accept="image/*" />
+						<label jsf:for="exampleInputFile">#{msg.file}</label> <input
+							type="file" jsf:id="exampleInputFile"
+							jsf:value="#{fileUploadMB.file}" accept="image/*" />
 						<p class="help-block">#{msg['message.help.only.image.file']}</p>
 					</div>
 					<br />
 					<div class="row">
 						<div class="col-xs-12">
-							<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="#{fileUploadMB.saveFile()}">
-								<span class="glyphicon glyphicon-cloud-upload" /> #{msg['file.upload']}
+							<button type="submit" class="btn btn-primary btn-lg btn-block"
+								jsf:action="#{fileUploadMB.saveFile()}">
+								<span class="glyphicon glyphicon-cloud-upload" />
+								#{msg['file.upload']}
 							</button>
 						</div>
 					</div>

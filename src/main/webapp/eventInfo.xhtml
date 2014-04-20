@@ -1,12 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
-<f:view contracts="#{sessionScope.theme}" transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
+<f:view contracts="#{sessionScope.theme}"
+	transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
 	<f:metadata>
-		<f:viewParam name="eventName" value="#{eventInfoMB.selectedEvent.name}" />
+		<f:viewAction action="#{eventInfoMB.searchSelectedEvent(param.eventName)}" />
 	</f:metadata>
-	
+
 	<ui:composition template="/template.xhtml">
 		<ui:define name="container">
 			<div class="row">
@@ -14,7 +19,7 @@
 					<label>#{msg.event}:</label>
 				</div>
 				<div class="col-xs-6 col-sm-10 col-md-10">
-					<p>tdc2014</p>
+					<p>#{eventInfoMB.selectedEvent.name}</p>
 				</div>
 			</div>
 			<div class="row">
@@ -22,7 +27,7 @@
 					<label>#{msg.participants}:</label>
 				</div>
 				<div class="col-xs-6 col-sm-10 col-md-10">
-					<p>8.625</p>
+					<p>#{eventInfoMB.selectedEvent.totalParticipants}</p>
 				</div>
 			</div>
 			<div class="row">
@@ -30,7 +35,11 @@
 					<label>#{msg['start.event.date']}:</label>
 				</div>
 				<div class="col-xs-6 col-sm-10 col-md-10">
-					<p>01/01/2013</p>
+					<p>
+					<h:outputText value="02/01/2013">
+						<f:convertDateTime/>
+					</h:outputText>
+					</p>
 				</div>
 			</div>
 			<div class="row">
@@ -38,7 +47,11 @@
 					<label>#{msg['finish.event.date']}:</label>
 				</div>
 				<div class="col-xs-6 col-sm-10 col-md-10">
-					<p>05/01/2013</p>
+					<p>
+						<h:outputText value="07/01/2013">
+							<f:convertDateTime/>
+						</h:outputText>
+					</p>
 				</div>
 			</div>
 			<div class="row">
@@ -56,15 +69,19 @@
 			<br />
 			<div class="row">
 				<div class="col-xs-12">
-					<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="searchParticipants?faces-redirect=true">
-						<span class="glyphicon glyphicon-filter" /> #{msg['search.participants']}
+					<button type="submit" class="btn btn-primary btn-lg btn-block"
+						jsf:action="searchParticipants?faces-redirect=true">
+						<span class="glyphicon glyphicon-filter" />
+						#{msg['search.participants']}
 					</button>
 				</div>
 			</div>
 			<div class="row" jsf:rendered="#{false}">
 				<div class="col-xs-12">
-					<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:outcome="fileUpload">
-						<span class="glyphicon glyphicon-filter" /> Upload Arquivo do evento
+					<button type="submit" class="btn btn-primary btn-lg btn-block"
+						jsf:outcome="fileUpload">
+						<span class="glyphicon glyphicon-filter" /> Upload Arquivo do
+						evento
 					</button>
 				</div>
 			</div>
