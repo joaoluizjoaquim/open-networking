@@ -69,13 +69,15 @@
 			<br />
 			<div class="row">
 				<div class="col-xs-12">
-					<button type="submit" class="btn btn-primary btn-lg btn-block"
-						jsf:action="searchParticipants?faces-redirect=true">
+					<button  class="btn btn-primary btn-lg btn-block"
+						jsf:outcome="searchParticipants">
+						<f:param name="eventName" value="#{eventInfoMB.selectedEvent.name}"/>
 						<span class="glyphicon glyphicon-filter" />
 						#{msg['search.participants']}
 					</button>
 				</div>
 			</div>
+			
 			<div class="row" jsf:rendered="#{false}">
 				<div class="col-xs-12">
 					<button type="submit" class="btn btn-primary btn-lg btn-block"

@@ -33,7 +33,10 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a jsf:outcome="/myProfile">#{msg['my.profile']}</a>
+						<a jsf:outcome="/myProfile">
+							<f:param name="participantName" value="Any user"/>
+							#{msg['my.profile']}
+						</a>
 					</li>
 					<li>
 						<a jsf:outcome="/index">#{msg.logout}</a>

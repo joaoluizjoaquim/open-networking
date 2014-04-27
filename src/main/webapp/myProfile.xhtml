@@ -8,6 +8,9 @@
 	xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
 <f:view contracts="#{sessionScope.theme}"
 	transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
+	<f:metadata>
+		<f:viewAction action="#{participantInfoMB.searchSelectedParticipantByName(param.participantName)}" />
+	</f:metadata>
 	<ui:composition template="/template.xhtml">
 		<ui:define name="container">
 			<div class="row">
@@ -17,9 +20,8 @@
 				</div>
 				<br />
 				<div class="cold-xs-12 col-sm-10">
-					<strong>Pedro de Alcântara Francisco António João Carlos
-						Xavier de Paula Miguel Rafael Joaquim José Gonzaga Pascoal
-						Cipriano Serafim de Bragança e Bourbon</strong> <br /> <span>pedrodealcantara@gmail.com</span>
+					<strong>#{participantInfoMB.selectedParticipant.name}</strong> 
+					<br /> <span>pedrodealcantara@gmail.com</span>
 					<br /> <span>(55)5555-5555</span>
 				</div>
 			</div>

@@ -8,6 +8,9 @@
 	xmlns:utils="http://xmlns.jcp.org/jsf/composite/">
 <f:view contracts="#{sessionScope.theme}"
 	transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
+	<f:metadata>
+		<f:viewParam name="eventName" value="#{participantSearchMB.eventName}"/>
+	</f:metadata>
 	<ui:composition template="/template.xhtml">
 		<ui:define name="container">
 			<div class="form-group">
@@ -15,33 +18,35 @@
 				<div class="input-group">
 					<input type="text" class="form-control" /> <span
 						class="input-group-btn">
-						<button class="btn btn-default" type="button">
+						<button class="btn btn-default" type="submit" 
+							jsf:action="#{participantSearchMB.findParticipantsByEventName()}">
 							<span class="glyphicon glyphicon-search" />
 						</button>
 					</span>
 				</div>
 			</div>
 			<br />
-			<div class="table-responsive">
+			<div class="table-responsive" jsf:rendenred="#{participantSearchMB.foundSomeParticipant}" >
 				<table class="table table-striped table-bordered">
 					<thead>
 						<tr>
 							<th>#{msg.participants}</th>
-							<th></th>
+							<th style="width: 10px;"></th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Pedro de Alcântara Francisco António João Carlos Xavier
-								de Paula Miguel Rafael Joaquim José Gonzaga Pascoal Cipriano
-								Serafim de Bragança e Bourbon</td>
-							<td style="width: 10px;">
-								<button type="submit" class="btn btn-default btn-xs"
-									jsf:action="myProfile?faces-redirect=true">
-									<span class="glyphicon glyphicon-chevron-right" />
-								</button>
-							</td>
-						</tr>
+						<ui:repeat var="participant" value="#{participantSearchMB.participantsList}">
+							<tr>
+								<td>#{participant.name}</td>
+								<td >
+									<button class="btn btn-default btn-xs"
+										jsf:outcome="myProfile">
+										<f:param name="participantName" value="#{participant.name}"/>
+										<span class="glyphicon glyphicon-chevron-right" />
+									</button>
+								</td>
+							</tr>
+						</ui:repeat>
 					</tbody>
 				</table>
 			</div>

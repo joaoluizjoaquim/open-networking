@@ -1,4 +1,4 @@
-package org.gujavasc.openetworking.mb;
+package org.gujavasc.openetworking.filter;
 
 import java.io.IOException;
 
