@@ -4,13 +4,13 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import org.gujavasc.openetworking.bean.Participant;
 
 @Named
-@ViewScoped
+@RequestScoped
 public class ParticipantSearchMB implements Serializable {
 	
 	private static final long serialVersionUID = -8329958748594670442L;

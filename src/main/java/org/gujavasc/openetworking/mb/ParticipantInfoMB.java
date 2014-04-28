@@ -1,7 +1,5 @@
 package org.gujavasc.openetworking.mb;
 
-import java.io.Serializable;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 

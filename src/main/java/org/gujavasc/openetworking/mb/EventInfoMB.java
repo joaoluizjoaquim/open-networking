@@ -1,12 +1,12 @@
 package org.gujavasc.openetworking.mb;
 
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import org.gujavasc.openetworking.bean.Event;
 
 @Named
-@ViewScoped
+@RequestScoped
 public class EventInfoMB {
 
 	private Event selectedEvent;

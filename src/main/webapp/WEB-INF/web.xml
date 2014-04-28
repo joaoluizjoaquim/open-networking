@@ -21,7 +21,7 @@
 	
 	<context-param>
 		<param-name>org.gujavasc.opennetworking.STATELESS_MODE</param-name>
-		<param-value>false</param-value>
+		<param-value>true</param-value>
 	</context-param>
 
 	<welcome-file-list>
