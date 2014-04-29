@@ -15,12 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 public class ThemeSwitcherFilter implements Filter {
 
 	private static final String _defaultTheme = "default";
-	
-	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
+	public void destroy() {
 	}
 
-	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest httpRequest = ((HttpServletRequest)request);
 		String selectedTheme = request.getParameter("theme");
@@ -35,8 +32,10 @@ public class ThemeSwitcherFilter implements Filter {
 		httpRequest.setAttribute("theme", selectedTheme);
 	}
 
-	@Override
-	public void destroy() {
+	public void init(FilterConfig arg0) throws ServletException {
+		// TODO Auto-generated method stub
+		
 	}
+    
     
 }
