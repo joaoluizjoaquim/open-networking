@@ -15,7 +15,7 @@ public class Participant {
 	
 	public Participant(String name){
 		this.name = name;
-		this.listSkills = new ArrayList<>();
+		this.listSkills = new ArrayList<String>();
 	}
 	
 	public String getName() {
