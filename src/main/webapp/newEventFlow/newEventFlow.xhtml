@@ -17,7 +17,7 @@
 					<div class="form-group">
 						<label>#{msg['start.event.date']}</label> 
 						<input jsf:id="startEventDate" type="date" class="form-control" jsf:value="#{newEventMB.eventInitialDate}">
-							<f:convertDateTime />
+							<f:convertDateTime type="date" pattern="dd/MM/yyyy" />
 						</input>
 					</div>
 				</div>
@@ -25,7 +25,7 @@
 					<div class="form-group">
 						<label>#{msg['finish.event.date']}</label> 
 						<input jsf:id="finishEventDate" type="date" class="form-control" jsf:value="#{newEventMB.eventFinalDate}">
-							<f:convertDateTime />
+							<f:convertDateTime type="date" pattern="dd/MM/yyyy" />
 						</input>
 					</div>
 				</div>

@@ -47,7 +47,7 @@
 
 
 	<!-- Web utilities -->
-
+<!-- 
 	<filter>
 		<filter-name>responseCacheFilter</filter-name>
 		<filter-class>com.googlecode.webutilities.filters.ResponseCacheFilter</filter-class>
@@ -87,5 +87,5 @@
 		<filter-name>compressionFilter</filter-name>
 		<url-pattern>*</url-pattern>
 	</filter-mapping>
-
+ -->
 </web-app>
