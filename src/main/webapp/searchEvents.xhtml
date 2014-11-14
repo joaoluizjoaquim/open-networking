@@ -7,7 +7,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <f:view contracts="#{sessionScope.theme}"
 	transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
-	<ui:composition template="/template.xhtml">
+	<ui:composition template="/blank.xhtml">
 		<ui:define name="container">
 			<div jsf:id="groupFilterEventName" class="form-group">
 				<label>#{msg['label.question.search.event']}</label>
@@ -38,9 +38,11 @@
 							<ui:repeat var="event" value="#{eventMB.eventsFound}">
 								<tr>
 									<td>#{event.name}</td>
-									<td><h:outputText value="#{event.totalParticipants}">
+									<td>
+										<h:outputText value="#{event.totalParticipants}">
 											<f:convertNumber />
-										</h:outputText></td>
+										</h:outputText>
+									</td>
 									<td style="width: 10px;">
 										<button type="submit" class="btn btn-default btn-xs"
 											jsf:outcome="eventInfo">
@@ -53,12 +55,6 @@
 						</tbody>
 					</table>
 				</div>
-
-				<button type="submit" class="btn btn-primary btn-lg btn-block"
-					jsf:action="newEventFlow" jsf:rendered="#{false}">
-					<span class="glyphicon glyphicon-plus"></span> #{msg['new.event']}
-				</button>
-
 			</div>
 		</ui:define>
 	</ui:composition>

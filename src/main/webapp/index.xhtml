@@ -6,9 +6,9 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <f:view contracts="#{sessionScope.theme}" transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
 	<ui:composition template="/blank.xhtml">
-		<ui:define name="body">
+		<ui:define name="container">
 			<form jsf:id="form">
-				<div class="container text-center">
+				<div class="text-center">
 					<h3>#{msg['project.name']}</h3>
 					<br />
 					<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="searchEvents?faces-redirect=true">#{msg['login.linkedin.button']}</button>
