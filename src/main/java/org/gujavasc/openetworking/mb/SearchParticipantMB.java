@@ -11,7 +11,7 @@ import org.gujavasc.openetworking.bean.Participant;
 
 @Named
 @RequestScoped
-public class ParticipantSearchMB implements Serializable {
+public class SearchParticipantMB implements Serializable {
 	
 	private static final long serialVersionUID = -8329958748594670442L;
 	
