@@ -7,7 +7,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <f:view contracts="#{sessionScope.theme}"
 	transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
-	<ui:composition template="/blank.xhtml">
+	<ui:composition template="/WEB-INF/resources/blank.xhtml">
 		<ui:define name="container">
 			<div jsf:id="groupFilterEventName" class="form-group">
 				<label>#{msg['label.question.search.event']}</label>
