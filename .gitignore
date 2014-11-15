@@ -13,3 +13,4 @@ target/
 .forge_settings
 .factorypath
 /nb-configuration.xml
+/*/src/main/webapp/WEB-INF/.faces-config.xml.jsfdia
