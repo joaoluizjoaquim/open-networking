@@ -1,20 +1,19 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:f="http://java.sun.com/jsf/core" 
-	xmlns:jsf="http://xmlns.jcp.org/jsf" 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<f:view contracts="#{sessionScope.theme}" transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
-	<ui:composition template="/blank.xhtml">
-		<ui:define name="container">
-			<form jsf:id="form">
-				<div class="text-center">
-					<h3>#{msg['project.name']}</h3>
-					<br />
-					<button type="submit" class="btn btn-primary btn-lg btn-block" jsf:action="searchEvents?faces-redirect=true">#{msg['login.linkedin.button']}</button>
-				</div>
-			</form>
-		</ui:define>
-	</ui:composition>
-</f:view>
+<ui:composition template="/resources/blank.xhtml">
+	<ui:define name="container">
+		<form jsf:id="form">
+			<div class="text-center">
+				<h3>#{msg['project.name']}</h3>
+				<br />
+				<button type="submit" class="btn btn-primary btn-lg btn-block"
+					jsf:action="searchEvents?faces-redirect=true">#{msg['login.linkedin.button']}</button>
+			</div>
+		</form>
+	</ui:define>
+</ui:composition>
 </html>

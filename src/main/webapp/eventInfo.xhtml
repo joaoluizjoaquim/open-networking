@@ -6,88 +6,52 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
-<f:view
-	transient="#{initParam['org.gujavasc.opennetworking.STATELESS_MODE']}">
-	<f:metadata>
-		<f:viewAction action="#{eventInfoMB.searchSelectedEvent(param.eventName)}" />
-	</f:metadata>
+<f:metadata>
+	<f:viewAction
+		action="#{eventInfoMB.searchSelectedEvent(param.eventName)}" />
+</f:metadata>
 
-	<ui:composition template="/template.xhtml">
-		<ui:define name="container">
-			<div class="row">
-				<div class="col-xs-6 col-sm-2 col-md-2 text-right">
-					<label>#{msg.event}:</label>
-				</div>
-				<div class="col-xs-6 col-sm-10 col-md-10">
-					<p>#{eventInfoMB.selectedEvent.name}</p>
-				</div>
+<ui:composition template="/resources/blank.xhtml">
+	<ui:define name="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-2 col-md-2 text-right">
+				<label>#{msg.event}:</label>
 			</div>
-			<div class="row">
-				<div class="col-xs-6 col-sm-2 col-md-2 text-right">
-					<label>#{msg.participants}:</label>
-				</div>
-				<div class="col-xs-6 col-sm-10 col-md-10">
-					<p>#{eventInfoMB.selectedEvent.totalParticipants}</p>
-				</div>
+			<div class="col-xs-6 col-sm-10 col-md-10">
+				<p>#{eventInfoMB.selectedEvent.name}</p>
 			</div>
-			<div class="row">
-				<div class="col-xs-6 col-sm-2 col-md-2 text-right">
-					<label>#{msg['start.event.date']}:</label>
-				</div>
-				<div class="col-xs-6 col-sm-10 col-md-10">
-					<p>
-					<h:outputText value="#{eventInfoMB.selectedEvent.initialDate}">
-						<f:convertDateTime/>
-					</h:outputText>
-					</p>
-				</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-2 col-md-2 text-right">
+				<label>#{msg.participants}:</label>
 			</div>
-			<div class="row">
-				<div class="col-xs-6 col-sm-2 col-md-2 text-right">
-					<label>#{msg['finish.event.date']}:</label>
-				</div>
-				<div class="col-xs-6 col-sm-10 col-md-10">
-					<p>
-						<h:outputText value="#{eventInfoMB.selectedEvent.finalDate}">
-							<f:convertDateTime/>
-						</h:outputText>
-					</p>
-				</div>
+			<div class="col-xs-6 col-sm-10 col-md-10">
+				<p>#{eventInfoMB.selectedEvent.totalParticipants}</p>
 			</div>
-			<div class="row">
-				<div class="col-xs-6">
-					<button type="button" class="btn btn-danger btn-lg btn-block">
-						<span class="glyphicon glyphicon-remove-sign" /> Checkout
-					</button>
-				</div>
-				<div class="col-xs-6">
-					<button type="button" class="btn btn-success btn-lg btn-block">
-						<span class="glyphicon glyphicon-ok-sign" /> Checkin
-					</button>
-				</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<button type="button" class="btn btn-danger btn-lg btn-block">
+					<span class="glyphicon glyphicon-remove-sign" /> Checkout
+				</button>
 			</div>
-			<br />
-			<div class="row">
-				<div class="col-xs-12">
-					<button  class="btn btn-primary btn-lg btn-block"
-						jsf:outcome="searchParticipants">
-						<f:param name="eventName" value="#{eventInfoMB.selectedEvent.name}"/>
-						<span class="glyphicon glyphicon-filter" />
-						#{msg['search.participants']}
-					</button>
-				</div>
+			<div class="col-xs-6">
+				<button type="button" class="btn btn-success btn-lg btn-block">
+					<span class="glyphicon glyphicon-ok-sign" /> Checkin
+				</button>
 			</div>
-			
-			<div class="row" jsf:rendered="#{false}">
-				<div class="col-xs-12">
-					<button type="submit" class="btn btn-primary btn-lg btn-block"
-						jsf:outcome="fileUpload">
-						<span class="glyphicon glyphicon-filter" /> Upload Arquivo do
-						evento
-					</button>
-				</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-xs-12">
+				<button class="btn btn-primary btn-lg btn-block"
+					jsf:outcome="searchParticipants">
+					<f:param name="eventName" value="#{eventInfoMB.selectedEvent.name}" />
+					<span class="glyphicon glyphicon-filter" />
+					#{msg['search.participants']}
+				</button>
 			</div>
-		</ui:define>
-	</ui:composition>
-</f:view>
+		</div>
+	</ui:define>
+</ui:composition>
 </html>
