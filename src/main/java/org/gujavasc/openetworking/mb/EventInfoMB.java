@@ -12,7 +12,7 @@ public class EventInfoMB {
 	private Event selectedEvent;
 	
 	public void searchSelectedEvent(String selectedEventName){
-		selectedEvent = new Event(selectedEventName, 7543);
+		selectedEvent = new Event(1l,"TDC");
 	}
 	
 	public Event getSelectedEvent() {

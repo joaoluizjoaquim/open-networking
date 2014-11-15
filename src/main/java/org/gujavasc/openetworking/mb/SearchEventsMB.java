@@ -15,17 +15,15 @@ public class SearchEventsMB implements Serializable{
 	
 	private static final long serialVersionUID = -6601391210412051501L;
 	
-	private boolean search;
 	private String filterEventName;
 	private List<Event> eventsFound;
 	
 	public void searchEvent(){
-		eventsFound = Arrays.asList(new Event("TDC 2014", 5753), new Event("JavaOne 2014",8492));
-		search = true;
+		eventsFound = Arrays.asList(new Event(1l,"TDC 2014"), new Event(2l,"JavaOne 2014"));
 	}
 	
 	public Boolean foundSomeEvent(){
-		return search;
+		return eventsFound != null && !eventsFound.isEmpty();
 	}
 
 	public List<Event> getEventsFound() {

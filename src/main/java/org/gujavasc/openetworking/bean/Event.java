@@ -1,37 +1,30 @@
 package org.gujavasc.openetworking.bean;
 
-import java.util.Calendar;
-import java.util.Date;
 
 public class Event {
 
+	private Long id;	
 	private String name;
+	private Long totalParticipants;
 
-	private Integer totalParticipants;
-
-
-	public Event() {
-	}
-
-	public Event(String name, Integer totalParticipants) {
+	public Event() {}
+	
+	public Event(Long id, String name){
+		this.id = id;
 		this.name = name;
-		this.totalParticipants = totalParticipants;
+		this.totalParticipants = Math.round(Math.random() * 1000);
 	}
 
-	public Integer getTotalParticipants() {
+	public Long getTotalParticipants() {
 		return totalParticipants;
-	}
-
-	public void setTotalParticipants(Integer totalParticipants) {
-		this.totalParticipants = totalParticipants;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public Long getId() {
+		return id;
 	}
 
 }
