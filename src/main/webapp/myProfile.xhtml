@@ -11,6 +11,9 @@
 		action="#{participantInfoMB.searchSelectedParticipantByName(param.participantName)}" />
 </f:metadata>
 <ui:composition template="/resources/blank.xhtml">
+	<ui:define name="top">
+		<utils:topBar/>
+	</ui:define>
 	<ui:define name="container">
 		<div class="row">
 			<div class="cold-xs-12 col-sm-2 text-center">
