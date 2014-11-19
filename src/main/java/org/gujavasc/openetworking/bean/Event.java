@@ -1,14 +1,10 @@
 package org.gujavasc.openetworking.bean;
 
-import java.beans.Transient;
-
-
 public class Event {
 
 	private Long id;	
 	private String name;
-	
-	
+		
 	private Long totalParticipants;
 
 	public Event() {}

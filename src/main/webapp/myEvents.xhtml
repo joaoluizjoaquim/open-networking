@@ -7,6 +7,9 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:utils="http://xmlns.jcp.org/jsf/composite/utils">
 <ui:composition template="/resources/blank.xhtml">
+	<ui:define name="top">
+		<utils:topBar/>
+	</ui:define>
 	<ui:define name="container">
 		<div class="form-group">
 			<label>#{msg['my.events']}</label>
