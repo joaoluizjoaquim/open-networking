@@ -1,13 +1,13 @@
 package org.gujavasc.openetworking.mb;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import org.gujavasc.openetworking.bean.Event;
+import org.gujavasc.openetworking.service.EventService;
 
 @Named
 @RequestScoped
@@ -19,7 +19,7 @@ public class SearchEventsMB implements Serializable{
 	private List<Event> eventsFound;
 	
 	public void searchEvent(){
-		eventsFound = Arrays.asList(new Event(1l,"TDC 2014"), new Event(2l,"JavaOne 2014"));
+		eventsFound = new EventService().findAllByName(filterEventName);
 	}
 	
 	public Boolean foundSomeEvent(){

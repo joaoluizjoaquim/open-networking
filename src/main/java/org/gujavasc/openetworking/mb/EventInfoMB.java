@@ -4,6 +4,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import org.gujavasc.openetworking.bean.Event;
+import org.gujavasc.openetworking.service.EventService;
 
 @Named
 @RequestScoped
@@ -11,8 +12,8 @@ public class EventInfoMB {
 
 	private Event selectedEvent;
 	
-	public void searchSelectedEvent(String selectedEventName){
-		selectedEvent = new Event(1l,"TDC");
+	public void searchSelectedEvent(Long eventId){
+		selectedEvent = new EventService().findById(eventId);
 	}
 	
 	public Event getSelectedEvent() {

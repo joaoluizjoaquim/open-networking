@@ -1,18 +1,28 @@
 package org.gujavasc.openetworking.bean;
 
+import java.beans.Transient;
+
 
 public class Event {
 
 	private Long id;	
 	private String name;
+	
+	
 	private Long totalParticipants;
 
 	public Event() {}
 	
 	public Event(Long id, String name){
-		this.id = id;
-		this.name = name;
-		this.totalParticipants = Math.round(Math.random() * 1000);
+		this.setId(id);
+		this.setName(name);
+		this.setTotalParticipants(Math.round(Math.random() * 1000));
+	}
+	
+	public Event(Long id, String name,Long totalParticipants){
+		this.setId(id);
+		this.setName(name);
+		this.setTotalParticipants(totalParticipants);
 	}
 
 	public Long getTotalParticipants() {
@@ -25,6 +35,18 @@ public class Event {
 
 	public Long getId() {
 		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setTotalParticipants(Long totalParticipants) {
+		this.totalParticipants = totalParticipants;
 	}
 
 }
