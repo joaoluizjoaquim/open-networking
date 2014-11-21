@@ -1,6 +1,5 @@
 package org.gujavasc.openetworking.mb;
 
-import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,9 +10,7 @@ import org.gujavasc.openetworking.bean.Participant;
 
 @Named
 @RequestScoped
-public class SearchParticipantMB implements Serializable {
-	
-	private static final long serialVersionUID = -8329958748594670442L;
+public class SearchParticipantMB{
 	
 	private String eventName;
 	private List<Participant> participantsList;

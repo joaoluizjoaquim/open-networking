@@ -1,9 +1,9 @@
 package org.gujavasc.openetworking.mb;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.gujavasc.openetworking.bean.Event;
@@ -11,15 +11,16 @@ import org.gujavasc.openetworking.service.EventService;
 
 @Named
 @RequestScoped
-public class SearchEventsMB implements Serializable{
-	
-	private static final long serialVersionUID = -6601391210412051501L;
+public class SearchEventsMB{
 	
 	private String filterEventName;
 	private List<Event> eventsFound;
 	
+	@Inject
+	private EventService service;
+	
 	public void searchEvent(){
-		eventsFound = new EventService().findAllByName(filterEventName);
+		eventsFound = service.findAllByName(filterEventName);
 	}
 	
 	public Boolean foundSomeEvent(){
